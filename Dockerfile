@@ -9,4 +9,4 @@ RUN pip install --upgrade -r /app/requirements.txt # pythonのライブラリは
 RUN apt-get update # ffmpegをビルド済みバイナリでinstallします。
 RUN apt-get install -y ffmpeg
 
-CMD ["python", "bot.py"]
+CMD ["python", "main.py"]
