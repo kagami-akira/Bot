@@ -108,5 +108,6 @@ async def on_voice_state_update(member, before, after):
             msg = f'{member.name} が {before.channel.name} から退室しました。'
             await text_ch.send(msg)
 
+            
 
 client.run(os.environ["DISCORD_TOKEN"])
