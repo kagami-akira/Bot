@@ -88,11 +88,11 @@ async def on_message(message):
         await message.channel.send(f'参加者は{vch_count}人です。内訳は男性{len(maleinvch)}人：女性{len(femaleinvch)}人：性別不問{vch_count - len(maleinvch) - len(femaleinvch)}人です。')       
     
 
-# ウェルカムメッセージ
 @client.event
 async def on_member_join(member):
     WelcomeChannel = client.get_channel(int(os.getenv('WELCOME_CH')))
-    await WelcomeChannel.send(f"{member.name}さん、ようこそいらっしゃいませ。必読にはしっかり目を通してくださいね。\n<'MASTER'>～！　お客様がお見えですよ！")
+    msg = f'{member.name}さん、ようこそいらっしゃいませ。必読１・２にはしっかり目を通してくださいね。\n' + (os.getenv('MASTER')) + '～！　お客様がお見えですよ！'
+    await WelcomeChannel.send(msg)
 
 
 #  入退室ログ
